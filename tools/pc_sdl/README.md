@@ -7,7 +7,23 @@ une fenêtre SDL2, pour voir et jouer sans flasher l'ESP32 à chaque essai.
 Seule la couche « matériel » (boutons, écran, NVS) est remplacée par ce
 dossier. Le firmware réel n'est pas touché par ces fichiers.
 
-## Compiler
+## Binaire Linux fourni (`bin/wargame_pc`)
+
+Un exécutable **Linux x86-64** précompilé est inclus dans ce dossier —
+pratique pour le partager directement avec quelqu'un sous Linux sans lui
+demander de compiler. Il lui faut seulement la bibliothèque SDL2 (pas les
+en-têtes de dev, juste la lib partagée) :
+```
+sudo apt install libsdl2-2.0-0     # Debian/Ubuntu — souvent déjà présente
+```
+Puis lancer directement :
+```
+./bin/wargame_pc
+```
+Ce binaire ne tourne **pas** sous Windows ni macOS (format ELF Linux) — pour
+ces plateformes, ou si tu modifies le code, recompile (voir plus bas).
+
+## Compiler (si tu modifies le code, ou sous Windows/macOS)
 
 **Linux / WSL :**
 ```
